@@ -11,8 +11,8 @@ You will want to do more complete testing.
 */
 #include <cstdlib>
 #include <iostream>
-#include "Song.cpp"
-#include "UtPod.cpp"
+#include "Song.h"
+#include "UtPod.h"
 
 using namespace std;
 
@@ -108,6 +108,13 @@ int main(int argc, char *argv[])
     RogersPod.shuffle();
     RogersPod.showSongList();
     cout << "--------------------------" << endl;
+
+
+    //Song s6("Eminem", "Til I Collapse", 250);
+   
+    s4.setSize(250);
+    result = RogersPod.addSong(s4);
+    cout << "result = " << result << endl;
 
     RogersPod.removeSong(s1);
     RogersPod.showSongList();

@@ -85,30 +85,28 @@ public abstract class Critter {
 
     public static void displayWorld() {
     	System.out.print("+");
-		for (int i = 0; i < Params.WORLD_WIDTH; i++) {
-			System.out.print("-");
-		}
+		for (int i = 0; i < Params.WORLD_WIDTH; i++) System.out.print("-");
 		System.out.println("+");
 		
-		boolean found = false;
+		boolean spacesNeeded = false;
 		for (int i = 0; i < Params.WORLD_HEIGHT; i++) {
 			System.out.print("|");
 			for (int j = 0; j < Params.WORLD_WIDTH; j++) {
 				for (int k = 0; k < population.size(); k++) {
 					if (population.get(k).x_coord == j && population.get(k).y_coord == i) {
 						System.out.print(population.get(k).toString());
-						found = true;
+						spacesNeeded = true;
 						break;
 					}
 				}
-				if (!found) { System.out.print(" "); }
-				else { found = false; }
+				if (!spacesNeeded) System.out.print(" "); 
+				else spacesNeeded = false;
 			}
 			System.out.println("|");
 		}
 	
     System.out.print("+");
-	for (int i = 0; i < Params.WORLD_WIDTH; i++) { System.out.print("-"); }
+	for (int i = 0; i < Params.WORLD_WIDTH; i++) System.out.print("-");
 	System.out.println("+");
     
     
